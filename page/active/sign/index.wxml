@@ -1,0 +1,9 @@
+<scroll-view class="sign" scroll-y="true">
+    <view class="topic">通过【扫码签到】完成本次活动签到</view>
+    <view class="hint">仅支持有书同城小程序【扫一扫】</view>
+    <image class="code"  mode="aspectFit" src="{{code}}"></image>
+    <view class="scan">扫一扫，完成签到</view>
+    <view class="scanTip">
+        “{{title}}”
+    </view>
+</scroll-view>

@@ -1,0 +1,49 @@
+<view class="editor">
+    <form bindsubmit="formSubmit">
+
+        <view class="editBox" hidden="{{inputBox.show}}">
+            <input type="text" placeholder="请输入您的{{inputBox.code}}" name="inputbox" bindinput="keyfunc" value="{{inputBox.value}}"/>
+        </view>
+
+        <view class="editBox" hidden="{{textBox.show}}">
+            <textarea type="text" placeholder="请输入您的{{textBox.code}}" name="textbox" bindinput="getUploadConent" maxlength="120" value="{{textBox.value}}"/>
+            <text class="count">{{wordLen}}</text>
+        </view>
+
+        <view class="editBox" hidden="{{sexBox.show}}">
+            <radio-group class="radio-group" bindchange="radioChange">
+                <block wx:for="{{sexBox.mtf}}">
+                    <label class="sex active radio">
+                        <radio value="{{item.value}}" hidden="true"/>
+                        {{item.title}} <image class="icon" src="/image/pma/icon.jpg" hidden="{{item.active}}"></image>
+                    </label>
+                </block>
+            </radio-group>
+        </view>
+
+        <view class="editBox" hidden="{{addrBox.show}}">
+            <picker bindchange="bindProvincePickerChange" value="{{provinceIndex}}" range="{{provinceArray}}">
+                <view class="picker cl">
+                    <text class="lable lf">市</text>
+                    {{provinceArray[provinceIndex]}}
+                    <view class="arrow rt">
+                        <image src="/image/pma/icon-right.png"></image>
+                    </view>
+                </view>
+            </picker>
+            <picker bindchange="bindCityPickerChange" value="{{cityIndex}}" range="{{cityArray}}">
+                <view class="picker cl">
+                    <text class="lable lf">区</text>
+                    {{cityArray[cityIndex]}}
+                    <view class="arrow rt">
+                        <image src="/image/pma/icon-right.png"></image>
+                    </view>
+                </view>
+            </picker>
+        </view>
+
+        <view class="btnBox">
+            <button class="{{keyvalue?'wxBtn':'fullBtn'}}" formType="submit">完成</button>
+        </view>
+    </form>
+</view>

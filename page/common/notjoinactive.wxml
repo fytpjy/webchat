@@ -1,0 +1,35 @@
+<template name="notjoinactive">
+	<view class="joinactive">
+		<navigator url="/page/active/report/index?id={{id}}" hover-class="navigator-hover">
+		<view class="li">
+			<view class="a_info">
+				<view class="cont">
+					<text>{{title}}</text>
+				</view>
+				<view class="more">
+					<view class="dt cl">
+						<view class="l">
+							<image src="/image/icon_03.png" class='icon_03'></image>
+							<text>活动时间：{{start_time}}</text>
+						</view>
+						<view class="r">
+							<image src="/image/icon_01.png" class='icon_01'></image>
+							<text>地址：{{canton}}</text>
+						</view>
+					</view>
+					<view class="dt cl">
+						<view class="l">
+							<image src="/image/icon_02.png" class='icon_02'></image>
+							<text wx:if="{{limit_number>0}}">活动人数：仅限{{limit_number}}人</text>
+							<text wx:else>活动人数：不限人数</text>
+						</view>
+						<view class="r">
+							<button url="{{url}}?id={{id}}" class="btn" style="background:{{button_info.bgcolor}}" hover-class="navigator-hover">{{button_info.title}}</button>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		</navigator>
+	</view>
+</template>

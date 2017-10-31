@@ -1,0 +1,48 @@
+<view class="report" bindscrolltoupper="scrollToLower">
+<form name='pushMsgFm' report-submit bindsubmit='report'>
+    <view class="reportTop">
+        <view class="topic">{{activity.title}}</view>
+        <view class="cont" wx:if="{{activity.target}}">
+            <image src="/image/active/icon-1.png"></image>
+            活动主题：<text>{{activity.target}}</text>
+        </view>
+        <view class="cont">
+            <image src="/image/active/icon-2.png"></image>
+            活动时间：{{activity.start_time}}
+        </view>
+        <view class="cont" bindtap="openaddr">
+            <image src="/image/active/icon-3.png"></image>
+            活动地点：{{activity.location}}
+            <view class="arrow rt">
+                <image src="/image/pma/icon-right.png"></image>
+            </view>
+        </view>
+        <view class="cont">
+            <image src="/image/active/icon-9.png"></image>
+            活动人数：{{activity.limit_number>0?activity.limit_number:'不限人数'}}
+        </view>
+        <view class="cont" wx:if="{{activity.wechat_no}}">
+            <image src="/image/active/icon-4.png"></image>
+            联系人微信：{{activity.wechat_no}}
+        </view>
+        <navigator class="cont" bindtap="scancode" wx:if="{{activity.button_info.id==11 || activity.button_info.id==6 || activity.button_info.id==7 || activity.button_info.id==5 || activity.button_info.id==4 || activity.button_info.id==8 || activity.button_info.id==2 || activity.button_info.id==16}}">
+            <image src="/image/active/icon-10.png"></image>
+            <view class="arrow rt">
+                <image src="/image/pma/icon-right.png"></image>
+            </view>
+            群二维码
+        </navigator>
+    </view>
+    <view class="reportMid">
+        <view class="title">活动流程</view>
+        <view class="flow" wx:for="{{activity.activity_process}}">
+            {{item.name}}
+        </view>
+    </view>
+    <view class="reportBelow">
+        <view class="title">活动简介</view>
+        <text class="intro">{{activity.desc}}</text>
+    </view>
+    <button class="belowBtn" form-type="submit" style="background: {{activity.button_info.bgcolor}}">{{activity.button_info.title}}</button>
+</form>
+</view>

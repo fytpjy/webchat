@@ -1,0 +1,59 @@
+<import src="/template/wxTem.wxml"/>
+
+<view class="member" scroll-y="true">
+    <view class="memTop">
+        <image class="bgTop" src="/image/pma/bgTop.jpg"></image>
+        <view class="userCard cl">
+            <view class="userBox lf">
+                <image class="userImg" src="{{userInfo.avatar}}"></image>
+            </view>
+            <view class="userMsg">
+                <view class="msg">昵称：{{userInfo.name}}</view>
+                <view class="msg">性别：{{userInfo.sex==1?'男':'女'}}</view>
+                <view class="msg">职业：{{userInfo.job}}</view>
+                <view class="msg">城市：{{userInfo.city}}</view>
+                <view class="msg" wx:if="{{userInfo.is_pma==1}}"><image src="/image/icon_pma.png"></image></view>
+                <view bindtap="showcard" data-url="/page/pma/member/applet" hover-class="navigator-hover" wx:if="{{!other_uid || user_id==other_uid}}">
+                    <view class="applet">
+                        <image src="/image/applet.png"></image>
+                        <view>小程序码</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="joinBox">
+            <view class="joinBar">
+                <view class="joinMsg">
+                    <view class="mText">V{{userInfo.level}}</view>
+                    <view class="tips">有书等级</view>
+                </view>
+                <view class="joinMsg borL">
+                    <view class="line"></view>
+                    <view class="mText">{{userInfo.activity_count}}场</view>
+                    <view class="tips">参与同城活动</view>
+                </view>
+                <view class="joinMsg">
+                    <view class="mText">{{userInfo.join_day}}天</view>
+                    <view class="tips">加入有书</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="memBelow">
+        <view class="profile">
+            <view class="title"><text>个人简介</text></view>
+            <text class="intro">{{userInfo.intro}}</text>
+        </view>
+
+    </view>
+    <view class="menBtnBox" wx:if="{{!other_uid || user_id==other_uid}}">
+        <view class="hint">点击生成名片分享给你的朋友们吧</view>
+        <button class="wxBtn" bindtap="sharecard" wx:if="{{!fromUrl}}">分享我的名片</button>
+        <button class="whBtn" bindtap="editCard" wx:if="{{!fromUrl}}" hover-class="none">编辑我的名片</button>
+        <button class="wxBtn" bindtap="goHome" wx:else>转到我的同城</button>
+    </view>
+</view>
+
+<view class="share" hidden="{{shareShow}}" bindtap="hiddenshare">
+    <image src="/image/pma/share.png"></image>
+</view>

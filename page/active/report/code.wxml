@@ -1,0 +1,7 @@
+<view class="code">
+    <view  class="codeBox">
+        <view class="codeTips">长按或扫描二维码加入群聊</view>
+        <image class="codeImg" mode="aspectFit" src="{{qrcode_img}}"></image>
+    </view>
+
+</view>

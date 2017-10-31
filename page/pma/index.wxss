@@ -1,0 +1,207 @@
+.member {
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+  border-top: 1 rpx solid #d9d9d9;
+  box-sizing: border-box;
+}
+.member .title {
+  font-size: 32rpx;
+  line-height: 1;
+  color: #333;
+  border-left: 8rpx solid #44cc84;
+  padding-left: 22rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+.member .title text {
+  color: #999;
+  padding-left: 15rpx;
+}
+.member .pmaTop {
+  background: #fff;
+  width: 100%;
+  height: 330rpx;
+  border-bottom: 1 rpx solid #d9d9d9;
+  padding: 30rpx 0;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}
+.member .pmaBelow {
+  background: #fff;
+  width: 100%;
+  padding: 25rpx 0 50rpx;
+  border-bottom: 1 rpx solid #d9d9d9;
+  box-sizing: border-box;
+}
+.member .pma {
+  width: 100%;
+  height: 240rpx;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+}
+.member .pma .countBox {
+  height: 240rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+.member .pma .count {
+  width: 160rpx;
+  height: auto;
+  display: block;
+  padding-right: 20rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+.member .pma .count image {
+  width: 130rpx;
+  height: 130rpx;
+  box-shadow: 0 0 1rpx rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.member .pma .count .nick {
+  width: 100%;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  display: block;
+}
+.member .introduce {
+  width: 100%;
+  height: 720rpx;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+}
+.member .introduce .introBox {
+  width: 1000%;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+.member .introduce .intro {
+  width: 510rpx;
+  box-sizing: border-box;
+  position: relative;
+  margin-right: 30rpx;
+}
+.member .introduce .intro:after {
+  content: " ";
+  padding-top: 132%;
+  display: block;
+}
+.member .introduce .intro .bgImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+.member .introduce .userBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 210rpx;
+  padding: 20rpx  40rpx 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+.member .introduce .userBox .userImg {
+  width: 136rpx;
+  height: 136rpx;
+  box-sizing: border-box;
+  border: 5rpx solid rgba(255, 253, 253, 0.7);
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.member .introduce .userBox .nick {
+    width: 100%;
+    color: #fff;
+    padding: 10rpx 0 20rpx;
+    text-align: center;
+}
+.member .introduce .userBox .nick text {
+  max-width: 80%;
+  font-size: 32rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  display: inline-block;
+}
+.member .introduce .userBox .nick image {
+  display: inline-block;
+  height: 30rpx;
+  width: 27rpx;
+  position: relative;
+  left: 10rpx;
+  top: 5rpx;
+}
+.member .introduce .joinBox {
+  position: absolute;
+  top: 230rpx;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 80rpx;
+  box-sizing: border-box;
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.member .introduce .joinBox .joinMsg {
+  margin: auto;
+  width: 33.33%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.member .introduce .joinBox .joinMsg .mText {
+  font-size: 28rpx;
+  line-height: 1;
+  margin-bottom: 8rpx;
+  color: #fff;
+}
+.member .introduce .joinBox .joinMsg .tips {
+  font-size: 24rpx;
+  line-height: 1;
+  color: #fff;
+  opacity: 0.9;
+}
+.member .introduce .joinBox .borL {
+  position: relative;
+}
+.member .introduce .joinBox .borL .line {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  border-left: 1rpx solid #e7e7e7;
+  border-right: 1rpx solid #e7e7e7;
+}
+.member .introduce .profile {
+  position: absolute;
+  top: 375rpx;
+  left: 0;
+  width: 100%;
+  height: 252rpx;
+  overflow: hidden;
+  font-size: 26rpx;
+  line-height: 36rpx;
+  color: #fff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}

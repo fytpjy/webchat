@@ -1,0 +1,92 @@
+.code {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  text-align: center;
+}
+.code .signBox {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.code .topic {
+  padding: 70rpx 0 120rpx;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 40rpx;
+  color: #333;
+}
+.code .line {
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1rpx solid #e7e7e7;
+  margin-bottom: 80rpx;
+  display: block;
+}
+.code .line text {
+  font-size: 28rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  color: #999;
+  background: #fff;
+  display: inline-block;
+  position: relative;
+  top: -30rpx;
+  padding: 0 20rpx;
+}
+.code .imgBor {
+  width: 250rpx;
+  height: 250rpx;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 1rpx solid #d9d9d9;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+}
+.code .imgBor image {
+  width: 234rpx;
+  height: 234rpx;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin: auto;
+  box-sizing: border-box;
+}
+.code .uName {
+  padding: 20rpx 0 10rpx;
+  font-size: 32rpx;
+  line-height: 1;
+  color: #333;
+  width: 70%;
+  margin: 0 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  display: block;
+}
+.code .sure {
+  font-size: 30rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #999;
+  display: inline-block;
+  padding-left: 85rpx;
+  position: relative;
+  margin-bottom: 70rpx;
+}
+.code .sure image {
+  position: absolute;
+  top: 5rpx;
+  left: 0;
+  width: 80rpx;
+  height: 30rpx;
+}

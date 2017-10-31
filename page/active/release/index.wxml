@@ -1,0 +1,106 @@
+<view class="release">
+    <form bindsubmit="formSubmit">
+    <view class="editBox">
+        <view class="textBox cl">
+            <text class="label lf">活动名称</text>
+                <view class="input">
+                    <input placeholder-class="psection" name="title" placeholder="为本次活动起一个名称" />
+                </view>
+        </view>
+        <view class="textBox cl">
+            <text class="label lf">活动日期</text>
+            <view class="pickerBox">
+                <picker class="date" mode="date" value="{{date}}" start="{{date}}" bindchange="bindDate" name="date">
+                    <view class="picker">{{date}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="textBox cl">
+            <text class="label lf">活动时间</text>
+            <view class="pickerBox cl">
+                <picker class="time lf start" mode="time" value="{{start_time}}" start="08:00" end="21:30" name="start_time" bindchange="bindStartTime">
+                    <view class="picker">{{start_time}}</view>
+                </picker>
+                <text class="lf line">-</text>
+                <picker class="time lf end" mode="time" value="{{end_time}}" start="08:00" end="21:30" name="end_time" bindchange="bindEndTime">
+                    <view class="picker">{{end_time}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="textBox cl">
+            <text class="label lf">活动地点</text>
+            <view class="arrow rt">
+                <image src="/image/pma/icon-right.png"></image>
+            </view>
+            <view class="input text-1">
+                <view bindtap="selectAddr" class="site">{{location?location:'请选择'}}</view>
+                <input name="location" hidden="true" value="{{location}}" />
+                <input name="longitude" hidden="true" value="{{longitude}}" />
+                <input name="latitude" hidden="true" value="{{latitude}}" />
+            </view>
+        </view>
+        <view class="textBox">
+            <view class="input textSite">
+                <input placeholder-class="psection" name="locationinfo" maxlength="30" placeholder="请准确输入街道门牌信息" />
+            </view>
+        </view>
+        <view class="textBox switchBox cl">
+            <text class="label lf">活动人数</text>
+            <view class="switch rt">
+                <text>{{limit_numberShow?'不限':'限制'}}</text>
+                <switch bindchange="switch1Change"/>
+            </view>
+        </view>
+        <view class="textBox cl" hidden="{{limit_numberShow}}">
+            <text class="label lf">具体人数</text>
+            <view class="input">
+                <input placeholder-class="psection" type="number" value="{{limit_number}}" name="limit_number" placeholder="请输入人数" />
+            </view>
+        </view>
+        <view class="textarea">
+            <text class="label">活动介绍</text>
+            <view class="text-1">
+                <textarea placeholder-class="psection" bindinput="getUploadConent"  maxlength="400" name="desc" placeholder="请介绍本次活动的具体内容"/>
+                <text class="count">{{wordLen}}</text>
+            </view>
+        </view>
+        </view>
+        <view class="editBox">
+        <view class="textBox cl">
+            <text class="label lf">活动流程</text>
+            <text class="hint rt">可多选</text>
+        </view>
+        <view class="selectBox">
+            <checkbox-group class="radio-group" bindchange="radioChange" name="process_ids">
+                <label class="select {{item.active?'active':''}}" wx:for="{{active_type}}">
+                    <checkbox value="{{item.id}}" hidden="true" />
+                    <image class="left" src="/image/active/icon-5.png"></image>
+                        {{item.name}}
+                    <image class="right" src="/image/active/icon-8.png"></image>
+                </label>
+            </checkbox-group>
+        </view>
+
+        <view class="textBox cl">
+            <text class="label lf">活动主题</text>
+            <view class="input">
+                <input placeholder-class="psection" name="target" placeholder="请输入本次活动的主题" />
+            </view>
+        </view>
+        <view class="textBox wxLink cl">
+            <text class="label lf">联系人微信</text>
+            <view class="input">
+                <input placeholder-class="psection" name="wechatno" placeholder="请输入你的微信" />
+            </view>
+        </view>
+
+    </view>
+    <view class="addTip">群二维码(请上传二维码图片)</view>
+    <view class="addCode cl">
+        <image wx:if="{{!group_qrcode}}" class="lf" bindtap="uploadImages" src="/image/active/add.png"></image>
+        <image wx:else class="lf" src="{{group_qrcode}}" bindtap="uploadImages"></image>
+        <input hidden="true" name="group_qrcode" value="{{srcUpload}}" />
+    </view>
+        <button class="belowBtn" formType="submit">预览活动</button>
+    </form>
+</view>

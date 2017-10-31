@@ -1,0 +1,45 @@
+.succ {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  text-align: center;
+}
+.succ .succImg {
+  padding: 70rpx 0 45rpx;
+}
+.succ .succImg image {
+  width: 200rpx;
+  height: 200rpx;
+  box-sizing: border-box;
+}
+.succ .codeImg {
+  padding-top: 10rpx;
+}
+.succ .codeImg image {
+  width: 280rpx;
+  height: 280rpx;
+  box-sizing: border-box;
+}
+.succ .apply {
+  font-size: 40rpx;
+  line-height: 2;
+  color: #000;
+}
+.succ .text {
+  font-size: 28rpx;
+  line-height: 2;
+  color: #888888;
+}
+.succ .text text {
+  color: #44cc84;
+}
+.succ .wxBox {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx 0;
+}
+.succ .wxBox .wxBtn {
+  margin-bottom: 30rpx;
+}

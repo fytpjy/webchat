@@ -1,0 +1,23 @@
+<import src="/template/wxTem.wxml"/>
+<view class="code" scroll-y="true">
+    <view class="signBox">
+        <view class="topic">{{title}}</view>
+        <view class="line">
+            <text>我们需要您的签到确认</text>
+        </view>
+        <view class="imgBor">
+            <image src="{{avatar}}"></image>
+        </view>
+        <view class="uName">{{name}}</view>
+        <view class="sure">
+            <image src="/image/icon_pma.png"></image>
+            本次活动PMA
+        </view>
+    </view>
+
+    <view class="btnBox">
+        <navigator url="/page/active/success/index?qd=1">
+            <button class="wxBtn">签到确认</button>
+        </navigator>
+    </view>
+</view>

@@ -1,0 +1,15 @@
+<view class="succ">
+    <view class="succImg">
+        <image src="/image/active/succ.png"></image>
+    </view>
+    <view class="submit" wx:if="{{qd==1}}">签到成功</view>
+    <view class="submit" wx:else>提交成功</view>
+
+    <view class="wxBox">
+        <button class="whBtn" bindtap="goToHome">回到主页</button>
+    </view>
+</view>
+
+<view class="share" hidden="{{shareShow}}" bindtap="hiddenShare">
+    <image src="/image/pma/share.png"></image>
+</view>

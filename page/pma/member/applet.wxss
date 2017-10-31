@@ -1,0 +1,57 @@
+.applet {
+  width: 100%;
+  min-height: 100%;
+  background: #fff;
+  text-align: center;
+  box-sizing: border-box;
+}
+.userImg {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 110rpx 0 30rpx;
+}
+.userImg image {
+  width: 216rpx;
+  height: 216rpx;
+  box-sizing: border-box;
+  border: 2rpx solid rgba(180, 165, 165, 0.8);
+}
+.userApplet {
+  font-size: 38rpx;
+  line-height: 1.5;
+  color: #333;
+}
+.scan,
+.acquire {
+  font-size: 30rpx;
+  line-height: 1.5;
+  color: #808080;
+}
+.appletCode {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 100rpx 0;
+}
+.appletCode image {
+  width: 428rpx;
+  height: 428rpx;
+}
+.logo {
+  width: 100%;
+  box-sizing: border-box;
+}
+.logo image {
+  width: 38rpx;
+  height: 38rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  top: 10rpx;
+}
+.logo text {
+  font-size: 28rpx;
+  color: #b2b2b2;
+  display: inline-block;
+  padding-left: 10rpx;
+}

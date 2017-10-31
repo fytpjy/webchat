@@ -1,0 +1,4 @@
+.active_join,.active_notjoin{
+	background: #FFF;
+	border-bottom: 1rpx solid #e6e6e6;
+}

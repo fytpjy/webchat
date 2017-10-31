@@ -1,0 +1,29 @@
+.succ {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  text-align: center;
+}
+.succ .succImg {
+  padding: 130rpx 0 30rpx;
+}
+.succ .succImg image {
+  width: 200rpx;
+  height: 200rpx;
+  box-sizing: border-box;
+}
+.succ .submit {
+  font-size: 40rpx;
+  line-height: 2;
+  color: #000;
+  margin-bottom: 70rpx;
+}
+.succ .wxBox {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx;
+}
+.succ .wxBox .wxBtn {
+  margin-bottom: 30rpx;
+}

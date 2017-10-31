@@ -1,0 +1,8 @@
+<view class="applet">
+    <view class="userImg"><image src="{{avatar}}"></image></view>
+    <view class="userApplet">我的专属小程序码</view>
+    <view class="scan">长按或扫码进入</view>
+    <view class="appletCode"><image mode="aspectFit" src="/image/applet.jpg"></image></view>
+    <view class=" acquire">创建有书同城名片，获取专属小程序码</view>
+    <view class="logo"><image src="/image/logo.jpg"></image><text>有书同城</text></view>
+</view>

@@ -1,0 +1,26 @@
+<view class='cityselect'>
+	<view class="h2">
+		<text>当前定位</text>
+	</view>
+	<view class="list">
+		<view class="li" wx:for="{{locationCity}}"><view bindtap="switchCity" data-cityid="{{item.city_id}}" data-cityname="{{item.name}}">{{item.name}}</view></view>
+	</view>
+
+	<block wx:if="{{visitCity.length>0}}">
+		<view class="h2">
+			<text>最近访问城市</text>
+		</view>
+		<view class="list">
+			<view class="li" wx:for="{{visitCity}}"><view bindtap="switchCity" data-cityid="{{item.city_id}}" data-cityname="{{item.name}}">{{item.name}}</view></view>
+		</view>
+	</block>
+
+	<block wx:if="{{hotCity.length>0}}">
+		<view class="h2">
+			<text>热门城市</text>
+		</view>
+		<view class="list">
+			<view class="li" wx:for="{{hotCity}}"><view bindtap="switchCity" data-cityid="{{item.city_id}}" data-cityname="{{item.name}}">{{item.name}}</view></view>
+		</view>
+	</block>
+</view>

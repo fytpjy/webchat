@@ -1,0 +1,23 @@
+<template name="wxBtn">
+    <view class="btnBox">
+    	<navigator url="{{url}}" hover-class="navigator-hover">
+        	<button class="wxBtn {{css}}">{{text}}</button>
+        </navigator>
+    </view>
+</template>
+<template name="belowBtn">
+    <navigator url="{{url}}" hover-class="navigator-hover">
+        <button class="belowBtn {{css}}">{{text}}</button>
+    </navigator>
+</template>
+<template name="reportCont">
+    <view class="cont">
+        <image src="{{src}}"></image>
+       {{text}}
+    </view>
+</template>
+<template name="share">
+    <view class="share" hidden="{{shareShow}}" bindtap="hiddenshare">
+        <image src="/image/pma/share.png"></image>
+    </view>
+</template>

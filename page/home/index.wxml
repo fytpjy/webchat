@@ -1,0 +1,222 @@
+<import src="../common/nodata.wxml"></import>
+<import src="../common/joinactive.wxml"></import>
+<import src="../common/notjoinactive.wxml"></import>
+
+<view class="section"  wx:if="{{isShow}}" bindscrolltoupper="scrollToLower">
+	<view class="section_title">
+		<navigator url="city/index" hover-class="navigator-hover" class="area">
+			<text>{{city}}</text>
+			<image src="/image/icon_12.png" class='icon_12'></image>
+		</navigator>
+		<view class="tab">
+			<view class="actvie_city {{!cityAll?'active':''}}" bindtap="tabclickCity"><text>同城活动</text></view>
+			<view class="actvie_all {{cityAll?'active':''}}" bindtap="tabclickAll"><text>全部活动</text></view>
+		</view>
+	</view>
+
+	<view class="blank"></view>
+	<view class="section_tab">
+		<!--同城活动-->
+		<view class="section_city" hidden="{{cityAll}}">
+			<view class="top">
+				<view class="part1">
+					<image src="/image/icon_13.png" class='icon_13' mode="aspectFit"></image>
+				</view>
+
+				<view class="part2">
+					<view class="user">
+						<view class="avtar">
+								<image wx:if="{{isShow}}" bindtap="memberindex" src="{{userInfo.avatar}}" mode="aspectFill" class="face"></image>
+								<image class="face" wx:else></image>
+								<view class="level" wx:if="{{userInfo.is_pma==1}}">
+									<image src="/image/icon_pma.png" class="icon_15"></image>
+								</view>
+							<navigator wx:if="{{userInfo.is_pma==1}}" url="/page/active/release/index" data-url="/page/active/release/index" hover-class="navigator-hover" class="public">发布活动</navigator>
+						</view>
+						<view class="name" wx:if="{{isShow}}">
+							<text class="n">{{userInfo.name}}</text>
+							<image wx:if="{{userInfo.sex==1}}" src="/image/icon_08.png" class="sex"></image>
+							<image wx:else="{{userInfo.sex==2}}" src="/image/icon_09.png" class="sex"></image>
+						</view>
+						<view class="name" wx:else></view>
+					</view>
+
+					<view class="info">
+						<view class="detail">
+							<view class="n">V{{userInfo.level}}</view>
+							<view class="t">有书等级</view>
+						</view>
+						<view class="detail m">
+							<icon class="left" />
+							<navigator url="/page/active/index?type=home">
+								<view class="n">{{userInfo.activity_count}}场</view>
+								<view class="t">参与同城活动</view>
+							</navigator>
+							<image src="/image/icon_20.png" class='icon_20' mode="aspectFit"></image>
+							<icon class="right" />
+						</view>
+						<view class="detail">
+							<view class="n">{{userInfo.join_day}}天</view>
+							<view class="t">加入有书</view>
+						</view>
+					</view>
+				</view>
+			</view>
+
+			<view class="section_active">
+				<view class="active_city" wx:if="{{isJoin}}">
+					<view class="l">
+						<image src="/image/icon_10.png" class='icon_10' mode="aspectFit"></image>
+						<text>{{city}}同城共读会</text>
+					</view>
+					<view class="r">
+						已有<text>{{cityJionNum}}</text>人加入
+					</view>
+				</view>
+
+				<view wx:if="{{cityjoinactive.length>0}}">
+					<view class="active_join join">
+						<view class="active_menu">
+							<view class="l">
+								<text>已报名的活动</text>
+							</view>
+							<view class="line"></view>
+						</view>
+						<block wx:for="{{cityjoinactive}}">
+							<template is="joinactive" data="{{...item}}"/>
+						</block>
+					</view>
+				</view>
+				<view wx:else>
+
+					<view class="nodata">
+						<image src="/image/icon_07.png" class='icon_07' mode="widthFix"></image>
+				        <view class="t" wx:if="{{!isJoin}}">你还没有加入同城共读会哦~</view>
+						<view class="t" wx:else>
+							<block wx:if="{{cityjoinactive.length==0 && citynotjoinactive.length==0}}">
+								暂无同城共读会活动，敬请期待！
+							</block>
+							<block wx:else>
+								你还没有加入任何活动！
+							</block>
+						</view>
+						<form name='pushMsgFm' report-submit bindsubmit='dirctionTo'>
+							<button form-type="submit" wx:if="{{!isJoin}}">加入{{city}}同城共读会</button>
+						</form>
+						<view class="doing" wx:if="{{!isJoin}}">
+							<text class="p">与1000W好友一起参与同城活动</text>
+							<icon class="line" />
+						</view>
+					</view>
+
+				</view>
+
+				<view wx:if="{{citynotjoinactive.length>0}}">
+					<view class="active_notjoin">
+						<view class="active_menu">
+							<view class="l">
+								<text>同城活动</text>
+							</view>
+							<view class="line"></view>
+						</view>
+						<block wx:for="{{citynotjoinactive}}">
+							<template is="notjoinactive" data="{{...item}}"/>
+						</block>
+					</view>
+				</view>
+			</view>
+		</view>
+
+		<!--全部活动-->
+		<view class="section_all" hidden="{{!cityAll}}">
+			<swiper indicator-dots="true" autoplay="true" interval="3000" duration="500" indicator-active-color="#FFF" wx:if="{{imgUrls.length>0}}">
+				<block wx:for="{{imgUrls}}">
+					<swiper-item>
+						<navigator url="{{item.href}}" hover-class="navigator-hover">
+						<image src="{{item.img}}" class="slide-image" mode="aspectFill" />
+						</navigator>
+					</swiper-item>
+				</block>
+			</swiper>
+
+			<view class="active_join">
+				<view class="active_menu">
+					<view class="l">
+						<text>正在进行</text>
+					</view>
+					<view class="r">
+						<navigator url="/page/active/index?type=now" hover-class="navigator-hover">
+							查看更多
+							<image src="/image/icon_14.png" class='icon_14'></image>
+						</navigator>
+					</view>
+					<view class="line"></view>
+				</view>
+				<block wx:for="{{joinactive}}">
+					<template is="joinactive" data="{{...item}}"/>
+				</block>
+			</view>
+
+			<view class="active_notjoin" wx:if="{{notjoinactive.length>0}}">
+				<view class="active_menu">
+					<view class="l">
+						<text>往期活动</text>
+					</view>
+					<view class="r">
+						<navigator url="/page/active/index?type=pass" hover-class="navigator-hover">
+							查看更多
+							<image src="/image/icon_14.png" class='icon_14'></image>
+						</navigator>
+					</view>
+					<view class="line"></view>
+				</view>
+				<block wx:for="{{notjoinactive}}">
+					<template is="notjoinactive" data="{{...item}}"/>
+				</block>
+			</view>
+		</view>
+
+	</view>
+</view>
+
+<view class="section" wx:else bindtap="errTips">
+	<view class="section_title">
+		<navigator hover-class="navigator-hover" class="area">
+			<text>全国</text>
+			<image src="/image/icon_12.png" class='icon_12'></image>
+		</navigator>
+		<view class="tab">
+			<view class="actvie_city active">同城活动</view>
+			<view class="actvie_all">全部活动</view>
+		</view>
+	</view>
+	<view class="blank"></view>
+	<view class="section_tab">
+		<view class="section_city">
+			<view class="top">
+				<view class="part1">
+					<image src="/image/icon_13.png" class='icon_13' mode="aspectFit"></image>
+				</view>
+				<view class="part2">
+					<view class="user">
+						<view class="avtar">
+							<image mode="aspectFill" class="face"></image>
+						</view>
+						<view class="name"></view>
+					</view>
+				</view>
+			</view>
+			<view class="section_active">
+				<view class="nodata">
+					<view style="height:7rem"></view>
+					<button>加入同城共读会</button>
+					<view style="height:2rem"></view>
+					<view class="doing">
+						<text class="p">点击进行授权</text>
+						<icon class="line" />
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,93 @@
+<view class="edit">
+    <view class="itemList">
+        <view class="itemBox" >
+            <view class="item item1 cl">
+                <view class="label lf"> <text>头像</text></view>
+                <view class="userImg rt">
+                    <image src="{{userInfo.avatar}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="itemBox">
+            <view class="item cl">
+                <view class="label lf"> <text>昵称</text></view>
+                <view class="text rt">
+                    <text>{{userInfo.name}}</text>
+                </view>
+            </view>
+        </view>
+        <navigator class="itemBox" url="/page/pma/member/editor?type=sex">
+            <view class="item cl">
+                <view class="label lf"> <text>性别</text></view>
+                <view class="arrow rt">
+                    <image src="/image/pma/icon-right.png"></image>
+                </view>
+                <view class="text rt">
+                   <text>{{userInfo.sex==1?'男':'女'}}</text>
+                </view>
+            </view>
+        </navigator>
+        <navigator class="itemBox" url="/page/pma/member/editor?type=job">
+            <view class="item cl">
+                <view class="label lf"> <text>职业</text></view>
+                <view class="arrow rt">
+                    <image src="/image/pma/icon-right.png"></image>
+                </view>
+                <view class="text rt">
+                   <text>{{userInfo.job}}</text>
+                </view>
+            </view>
+        </navigator>
+        <navigator class="itemBox" url="/page/pma/member/editor?type=addr">
+            <view class="item cl">
+                <view class="label lf"> <text>地区</text></view>
+                <view class="arrow rt">
+                    <image src="/image/pma/icon-right.png"></image>
+                </view>
+                <view class="text rt">
+                   <text>{{userInfo.province}}{{userInfo.city}}</text>
+                </view>
+            </view>
+        </navigator>
+            <navigator class="itemBox" url="/page/pma/member/editor?type=text">
+                <view class="item item2 cl">
+                    <view class="label lf"> <text>个人介绍</text></view>
+                    <view class="introBox">
+                        <view class="intro">{{userInfo.intro}}</view>
+                            <view class="arrow rt">
+                            <image src="/image/pma/icon-right.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+    </view>
+    <view class="editTips">以下信息为报名活动所需，非必选</view>
+    <view class="itemList">
+        <navigator url="/page/pma/member/editor?type=name" class="itemBox">
+            <view class="item cl">
+                <view class="label lf"> <text>姓名</text></view>
+                <view class="arrow rt">
+                    <image src="/image/pma/icon-right.png"></image>
+                </view>
+                <view class="text rt">
+                    <text>{{userInfo.real_name}}</text>
+                </view>
+            </view>
+        </navigator>
+        <navigator class="itemBox" url="/page/pma/member/editor?type=mobile">
+            <view class="item cl">
+                <view class="label lf"> <text>手机号</text></view>
+                <view class="arrow rt">
+                    <image src="/image/pma/icon-right.png"></image>
+                </view>
+                <view class="text rt">
+                    <text>{{userInfo.mobile}}</text>
+                </view>
+            </view>
+        </navigator>
+    </view>
+
+    <view class="btnBox">
+        <button class="wxBtn" bindtap="saveData">保存</button>
+    </view>
+</view>

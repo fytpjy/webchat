@@ -1,0 +1,36 @@
+.sign {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  text-align: center;
+}
+.sign .topic {
+  width: 100%;
+  padding-top: 70rpx;
+  font-size: 38rpx;
+  line-height: 2;
+  color: #333;
+}
+.sign .hint {
+  font-size: 32rpx;
+  line-height: 1;
+  color: #666;
+  margin-bottom: 100rpx;
+}
+.sign .code {
+  width: 600rpx;
+  height: 600rpx;
+}
+.sign .scan {
+  font-size: 36rpx;
+  line-height: 2;
+  color: #666;
+}
+.sign .scanTip {
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: #999;
+  padding:0 150rpx;
+
+}

@@ -1,0 +1,14 @@
+<template name="nodata">
+	<view class="nodata">
+		<image src="/image/icon_07.png" class='icon_07' mode="widthFix"></image>
+        <view class="t" wx:if="{{!isJoin}}">你还没有加入同城共读会哦~</view>
+		<view class="t" wx:else>暂无同城共读会活动，敬请期待！</view>
+		<form name='pushMsgFm' report-submit bindsubmit='dirctionTo'>
+			<button form-type="submit" wx:if="{{!isJoin}}">加入{{city}}同城共读会</button>
+		</form>
+		<view class="doing" wx:if="{{!isJoin}}">
+			<text class="p">与1000W好友一起参与同城活动</text>
+			<icon class="line" />
+		</view>
+	</view>
+</template>

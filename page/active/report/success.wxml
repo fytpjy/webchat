@@ -1,0 +1,20 @@
+<scroll-view class="succ" scroll-y="true">
+    <view class="succImg">
+        <image src="/image/active/succ.png"></image>
+    </view>
+    <view class="apply">报名成功</view>
+    <view class="text">请保存下方二维码<text>加入活动群</text></view>
+    <view class="codeImg">
+        <image src="{{qrcode}}" mode="aspectFit" bindtap="scancode"></image>
+    </view>
+    <view class="text" wx:if="{{wechat_no}}">活动组织者微信：<text>{{wechat_no}}</text></view>
+    <view class="wxBox">
+        <button class="wxBtn" bindtap="showShare" hidden="true">分享该活动</button>
+        <button class="whBtn" bindtap="gohome">回到主页</button>
+    </view>
+</scroll-view>
+
+
+<view class="share" hidden="{{shareShow}}" bindtap="hiddenShare">
+    <image src="/image/pma/share.png"></image>
+</view>

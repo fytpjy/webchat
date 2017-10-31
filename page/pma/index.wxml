@@ -1,0 +1,53 @@
+<scroll-view class="member" scroll-y="true">
+    <view class="pmaTop">
+        <view class="title">PMA成员<text>({{len}}人)</text></view>
+        <scroll-view  class="pma" scroll-x="true">
+            <view class="countBox cl" style="width: {{user_width}}rpx">
+                <!--width: 830rpx  == (160*5+30)rpx-->
+                <view class="count lf" wx:for="{{create_user}}">
+                    <navigator url="/page/pma/member/index?id={{user_id}}&other_uid={{item.user_id}}&f=member">
+                        <image src="{{item.avatar}}"></image>
+                        <view class="nick">{{item.name}}</view>
+                    </navigator>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="pmaBelow">
+        <view class="title">成员简介信息<text>({{merberlen}}人)</text></view>
+        <scroll-view  class="introduce" scroll-x="true">
+            <view class="introBox cl"  style="width: {{intro_width}}rpx">
+                <!--width: 2730rpx  == (510*5+30)rpx-->
+                <view class="intro lf" wx:for="{{user_list}}">
+                    <navigator url="/page/pma/member/index?id={{user_id}}&other_uid={{item.user_id}}&f=member">
+                        <image class="bgImg" src="/image/pma/bgImg.png"></image>
+                        <view class="userBox">
+                            <image class="userImg" src="{{item.avatar}}"></image>
+                            <view class="nick">
+                                <text>{{item.name}}</text>
+                                <image src="/image/icon_08.png" wx:if="{{item.sex=='1'}}"></image>
+                                <image src="/image/icon_09.png" wx:elif="{{item.sex=='2'}}"></image>
+                            </view>
+                        </view>
+                        <view class="joinBox">
+                            <view class="joinMsg">
+                                <view class="mText">V{{item.level}}</view>
+                                <view class="tips">有书等级</view>
+                            </view>
+                            <view class="joinMsg">
+                                <view class="mText">{{item.activity_count}}场</view>
+                                <view class="tips">参与同城活动</view>
+                            </view>
+                            <view class="joinMsg">
+                                <view class="mText">{{item.join_day}}天</view>
+                                <view class="tips">加入有书</view>
+                            </view>
+                        </view>
+                        <view class="profile">{{item.intro}}</view>
+                    </navigator>
+                </view>
+
+            </view>
+        </scroll-view>
+    </view>
+</scroll-view>

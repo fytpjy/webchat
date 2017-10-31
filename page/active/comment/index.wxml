@@ -1,0 +1,53 @@
+<view class="comment">
+    <view class="tips">为了能够给书友们带来更好的同城活动体验，有书团队诚挚邀请您对本次活动进行评价</view>
+    <form bindsubmit="formSubmit">
+        <view class="part part1">
+            <view class="titleBox cl">
+                <text class="title lf">对本次活动的总体满意度如何？</text>
+                <text class="hint rt">满意请给五颗星哟</text>
+            </view>
+            <view class="startBox">
+                <view class="startImg" bindtap="changeWidth">
+                    <view class="start start1"  name="start" style="width:{{width}};">
+                        <image src="/image/active/start-1.png"></image>
+                    </view>
+                    <view class="start start2">
+                        <image src="/image/active/start-2.png"></image>
+                    </view>
+                </view>
+
+            </view>
+        </view>
+        <view class="part part2">
+            <view class="titleBox cl">
+                <text class="title lf">对本次活动的哪些环节最感兴趣？</text>
+                <text class="hint rt">可多选</text>
+            </view>
+            <view class="selectBox">
+                <checkbox-group class="radio-group" bindchange="radioChange" name="process">
+                    <label class="select {{item.active?'active':''}}" wx:for="{{active_type}}">
+                        <checkbox value="{{item.id}}" hidden="true"/>
+                        <image class="left" src="/image/active/icon-5.png"></image>
+                        {{item.name}}
+                        <image class="right" src="/image/active/icon-8.png"></image>
+                    </label>
+                </checkbox-group>
+            </view>
+        </view>
+        <view class="part part3">
+            <view class="titleBox cl">
+                <text class="title lf">有什么其他反馈想对我们说的吗？</text>
+                <text class="hint rt">畅所欲言吧</text>
+            </view>
+            <view class="feedback">
+                <textarea  placeholder-class="psection" name="feedback" bindlinechange="bindlinechange" bindinput="getUploadConent" maxlength="300" style="height:{{height}};min-height: 60px" value="{{feedback}}" placeholder="欢迎各种吐槽，批评或表扬。我们或认真听取你的意见和建议。"/>
+                <text class="count">{{wordLen}}</text>
+            </view>
+        </view>
+        <!--<view class="btnBox">-->
+            <!--<button class="wxBtn" formType="submit">提交评价</button>-->
+        <!--</view>-->
+        <button class="belowBtn" formType="submit">提交评价</button>
+    </form>
+
+</view>

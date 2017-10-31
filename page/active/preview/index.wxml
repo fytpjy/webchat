@@ -1,0 +1,43 @@
+<view class="preview">
+    <view class="previewTop">
+        <view class="topic">{{title}}</view>
+        <view class="cont" wx:if="{{target}}">
+            <image src="/image/active/icon-1.png"></image>
+            活动共读：{{target}}
+        </view>
+        <view class="cont">
+            <image src="/image/active/icon-2.png"></image>
+            活动时间：{{start_time}}
+        </view>
+        <view class="cont">
+            <image src="/image/active/icon-3.png"></image>
+            活动地点：{{location}}
+        </view>
+        <view class="cont">
+            <image src="/image/active/icon-9.png"></image>
+            活动人数：{{limit_number==0?'不限人数':limit_number}}
+        </view>
+        <view class="cont" wx:if="{{wechatno}}">
+            <image src="/image/active/icon-4.png"></image>
+            联系人微信：{{wechatno}}
+        </view>
+        <navigator class="cont" bindtap="scancode"  wx:if="{{qrcode}}">
+            <image src="/image/active/icon-10.png"></image>
+            <view class="arrow rt">
+                <image src="/image/pma/icon-right.png"></image>
+            </view>
+            群二维码
+        </navigator>
+    </view>
+    <view class="previewMid">
+        <view class="title">活动流程</view>
+        <view class="flow" wx:for="{{active_type}}">
+            {{item.name}}
+        </view>
+    </view>
+    <view class="previewBelow">
+        <view class="title">活动简介</view>
+        <text class="intro">{{desc}}</text>
+    </view>
+    <button class="belowBtn" bindtap="saveData">确认提交</button>
+</view>

@@ -1,0 +1,22 @@
+.code {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+}
+.code .codeBox {
+  margin: auto;
+  padding-bottom: 50rpx;
+}
+.code .codeTips {
+  width: 100%;
+  font-size: 32rpx;
+  color: #666;
+  line-height: 2;
+}
+.code .codeImg {
+  width: 480rpx;
+  height: 600rpx;
+}
